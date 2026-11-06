@@ -24,8 +24,9 @@ body {
 header { background: #0b4d2c; color: #fff; }
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; flex-wrap: wrap; }
 header a { color: #fff; text-decoration: none; }
-.brand { font-weight: 700; letter-spacing: .02em; }
-.brand span { color: #e8c766; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; }
+.logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid #e8c766; object-fit: cover; flex: none; }
+.brand .name span { color: #e8c766; }
 nav { display: flex; gap: 16px; font-size: .95rem; }
 nav a { opacity: .85; }
 nav a:hover, nav a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
