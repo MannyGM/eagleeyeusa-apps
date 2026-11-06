@@ -1,0 +1,17 @@
+{
+  "messages": [
+    {
+      "id": "test-other-platform-ios",
+      "title": "WRONG: expired message",
+      "body": "This should never show.",
+      "until": "2020-01-01"
+    },
+    {
+      "id": "test-1",
+      "title": "Test message",
+      "body": "This is a test of Nidaa messages. Debug builds only.",
+      "buttonText": "Open site",
+      "url": "https://eagleeyeusa.com"
+    }
+  ]
+}
