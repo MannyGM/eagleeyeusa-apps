@@ -21,16 +21,17 @@ body {
   font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
-header { background: #0b4d2c; color: #fff; }
-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; flex-wrap: wrap; }
+header { background: #121c27; color: #fff; border-bottom: 1px solid rgba(200,150,46,.45); }
+header .wrap { max-width: 1080px; display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; padding-block: 12px; flex-wrap: wrap; }
 header a { color: #fff; text-decoration: none; }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .02em; }
-.logo { width: 52px; height: 52px; border-radius: 50%; background: #fff; border: 2px solid #e8c766; object-fit: cover; flex: none; }
-.brand .name span { color: #e8c766; }
-nav { display: flex; gap: 16px; font-size: .95rem; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(1.5rem, 3.6vw, 2.35rem); line-height: 1.1; font-weight: 900; letter-spacing: .06em; white-space: nowrap; }
+.logo { width: 76px; height: 76px; border-radius: 50%; background: #fff; border: 2px solid #c8962e; object-fit: cover; flex: none; }
+/* USA filled with the flag */
+.brand .usa { background: url("img/flag.svg") center / 100% 100% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 .6px rgba(255,255,255,.9)); }
+nav { display: flex; gap: 2px 20px; font-size: 1.08rem; font-weight: 600; flex-wrap: wrap; }
 nav a { opacity: .85; }
 nav a:hover, nav a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-main { padding-block: 32px 48px; }
+main.wrap { padding-block: 32px 48px; }
 h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.2; color: var(--green); margin: 0 0 8px; }
 h2 { font-size: 1.25rem; color: var(--green); margin: 32px 0 8px; }
 h3 { font-size: 1.05rem; margin: 22px 0 4px; }
@@ -46,3 +47,4 @@ ul.features { padding-left: 20px; }
 ul.features li { margin: 4px 0; }
 footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 footer .wrap { padding-block: 18px 28px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+@media (max-width: 640px) { .logo { width: 54px; height: 54px; } }
