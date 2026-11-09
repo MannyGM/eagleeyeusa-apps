@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Nidaa نداء الصلاة | Eagle Eye USA</title>
+<meta name="description" content="Download Nidaa: prayer times and Azan for iPhone and Android. Free, no ads, no account.">
+<link rel="stylesheet" href="../style.css?v=20261107">
+<style>
+  .get { text-align: center; }
+  .get .icon { width: 120px; height: 120px; border-radius: 26px; box-shadow: 0 4px 16px rgba(0,0,0,.18); margin-top: 8px; }
+  .get .badges { justify-content: center; }
+  .get .badge { min-width: 200px; padding: 12px 18px; font-size: 1rem; }
+  .get .status { margin-top: 14px; }
+</style>
+<script>
+  // The QR code points here. Fill in a store link when that listing is live; until then this page says "coming soon".
+  // Before release, a TestFlight public link or a Play testing link can go here instead.
+  var STORE = {
+    ios: "",     // App Store, e.g. "https://apps.apple.com/app/id1234567890"
+    android: ""  // Google Play: "https://play.google.com/store/apps/details?id=com.azanapp"
+  };
+  // iPads that ask for desktop sites say "Macintosh" but have a touch screen.
+  var ua = navigator.userAgent;
+  var platform = /android/i.test(ua) ? "android"
+    : (/iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1)) ? "ios" : "";
+  if (platform && STORE[platform] && !/[?&]stay\b/.test(location.search)) location.replace(STORE[platform]);
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="../"><img class="logo" src="../img/logo.png" alt="Eagle Eye USA logo" width="52" height="52"><span class="name">EAGLE EYE <span class="usa">USA</span></span></a>
+    <nav>
+      <a href="../">Nidaa <span lang="ar" dir="rtl">نداء الصلاة</span>: Prayer Times &amp; Alarm</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap get">
+  <img class="icon" src="icon.png" alt="Nidaa app icon" width="120" height="120">
+  <h1>Get Nidaa <span lang="ar" dir="rtl">نداء الصلاة</span></h1>
+  <p class="lede" style="margin-inline:auto">Prayer times and a beautiful Azan for each prayer. Free, with no ads and no account.</p>
+  <div class="badges" id="badges"></div>
+  <p class="muted status" id="status"></p>
+  <p class="muted">Questions? <a href="../support.html">Support</a> · <a href="mailto:magoodsupport@gmail.com">magoodsupport@gmail.com</a></p>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Eagle Eye USA, LLC</span>
+    <span><a href="https://eagleeyeusa.com">eagleeyeusa.com</a></span>
+  </div>
+</footer>
+<script>
+  // Shown on a computer, when a store isn't live yet, or with ?stay. The visitor's own store comes first.
+  var stores = [["ios", "App Store", "iPhone"], ["android", "Google Play", "Android"]];
+  if (platform === "android") stores.reverse();
+  var box = document.getElementById("badges");
+  stores.forEach(function (s) {
+    var el = document.createElement(STORE[s[0]] ? "a" : "span");
+    el.className = STORE[s[0]] ? "badge" : "badge soon";
+    el.textContent = STORE[s[0]] ? s[1] + " (" + s[2] + ")" : s[1] + ": coming soon";
+    if (STORE[s[0]]) el.href = STORE[s[0]];
+    box.appendChild(el);
+  });
+  if (platform && !STORE[platform])
+    document.getElementById("status").textContent = (platform === "ios" ? "The iPhone" : "The Android") +
+      " app is coming soon. Please check this page again, or scan the code again after the launch.";
+</script>
+</body>
+</html>
