@@ -17,8 +17,8 @@
   // The QR code points here. Fill in a store link when that listing is live; until then this page says "coming soon".
   // Before release, a TestFlight public link or a Play testing link can go here instead.
   var STORE = {
-    ios: "",     // App Store, e.g. "https://apps.apple.com/app/id1234567890"
-    android: ""  // Google Play: "https://play.google.com/store/apps/details?id=com.azanapp"
+    ios: "https://testflight.apple.com/join/mhqAn466",  // TestFlight beta until the App Store listing is live ("https://apps.apple.com/app/id...")
+    android: ""  // Google Play: "https://play.google.com/store/apps/details?id=com.eagleeyeusa.nidaa"
   };
   // iPads that ask for desktop sites say "Macintosh" but have a touch screen.
   var ua = navigator.userAgent;
@@ -48,7 +48,7 @@
 </main>
 <footer>
   <div class="wrap">
-    <span>© 2026 Eagle Eye USA, LLC · Ref <span class="ref">7707710</span></span>
+    <span>© 2026 Eagle Eye USA, LLC · Ref <span class="ref">7707711</span></span>
     <span><a href="https://eagleeyeusa.com">eagleeyeusa.com</a></span>
   </div>
 </footer>
@@ -60,7 +60,8 @@
   stores.forEach(function (s) {
     var el = document.createElement(STORE[s[0]] ? "a" : "span");
     el.className = STORE[s[0]] ? "badge" : "badge soon";
-    el.textContent = STORE[s[0]] ? s[1] + " (" + s[2] + ")" : s[1] + ": coming soon";
+    var beta = /testflight\.apple\.com|play\.google\.com\/apps\/(internaltest|testing)/.test(STORE[s[0]]);
+    el.textContent = !STORE[s[0]] ? s[1] + ": coming soon" : beta ? (s[0] === "ios" ? "TestFlight beta" : "Google Play beta") + " (" + s[2] + ")" : s[1] + " (" + s[2] + ")";
     if (STORE[s[0]]) el.href = STORE[s[0]];
     box.appendChild(el);
   });
